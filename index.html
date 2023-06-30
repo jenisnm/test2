@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        * {
+            font-family: 'Poppins',sans-serif;
+        }
+        body {
+            background: #0052D4;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #6FB1FC, #4364F7, #0052D4);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #6FB1FC, #4364F7, #0052D4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+        td {
+            outline: 1px solid #000;
+            border-collapse: collapse;
+            padding: 10px;
+            background-color: #fff;
+            text-align: center;
+        }
+    </style>
+    <title>Squares and Cubes</title>
+</head>
+<body>
+    <h2>Enter the range</h2>
+    <input type="number" name="iput" id="iput">
+    <button onclick="tb(parseInt(document.getElementById('iput').value))">Submit</button>
+    <h1>Squares and Cubes of numbers 0 to 10</h1>
+    <table>
+        <tr>
+            <td>Number</td>
+            <td>Square</td>
+            <td>Cube</td>
+        </tr>
+    </table>
+    <script>
+        const tb = (val) => {
+            let st = "<tr><td>Number</td><td>Square</td><td>Cube</td></tr>";
+            for(let i=0;i<val+1;i++) {
+                st+=`<tr><td>${i}</td><td>${i*i}</td><td>${i*i*i}</td></tr>`;
+            }
+            document.getElementsByTagName('table')[0].innerHTML = st
+        }
+    </script>
+</body>
+</html>
